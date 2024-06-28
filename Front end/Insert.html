@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Students Details</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+
+    <link rel="stylesheet" href="" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      
+         $(document).ready(function(){
+            $("#submitBtn").click(function() {
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://localhost:3000/api/student/',
+                    contentType: 'application/json',
+                    data: JSON.stringify(
+                    {
+                    "StudentId": $('#sid').val(),
+                    "FirstName": $("#Fname").val(),
+                    "LastName": $("#Lname").val(),
+                    "email": $("#email").val(),
+                    "city": $("#city").val(),
+                    "course": $("#course").val(),
+                    "guardian": $("#guardian").val(),
+                    "subject": $("#subject").val()
+                    }),
+                    success: function (data, textStatus, jQxhr) {
+                    alert("Data Inserted");
+                    
+                    },
+                    error: function (xhr, textStatus, error) {
+                    alert("Error");
+                    }
+                    });
+                    // Clear the input fields
+          $("#sid").val("");
+          $("#Fname").val("");
+          $("#Lname").val("");
+          $("#email").val("");
+          $("#city").val("");
+          $("#course").val("");
+          $("#guardian").val("");
+          $("#subject").val("");
+                
+          
+          
+          
+
+            });
+        });
+
+
+
+    </script>
+  </head>
+  <body class="body-bg" background="images/BG2.jpg" >
+    <div class="container col-lg-8 position-absolute top-50 start-50 translate-middle bg-white shadow-sm rounded-4">
+      <div class="row justify-content-center align-items-center text-center">
+        <div class="col-lg-8 p-10 w-50 ">
+          <h2 class="my-3 text-center">Insert Student Details</h2>
+
+         <div class="mb-3">
+            <input type="text"
+              class="form-control p-3 shadow-none rounded-pill"
+              id="sid"
+              placeholder="Student ID"
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control p-3 shadow-none rounded-pill"
+              id="Fname"
+              placeholder="First name"
+            />
+          </div>
+
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control p-3 shadow-none rounded-pill"
+              id="Lname"
+              placeholder="Last name"
+            />
+          </div>
+
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control p-3 shadow-none rounded-pill"
+              id="email"
+              placeholder="Email"
+            />
+          </div>
+
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control p-3 shadow-none rounded-pill"
+              id="city"
+              placeholder="NearCity"
+            />
+          </div>
+
+          
+
+          <div class="mb-3">
+            <select class="form-control p-3 shadow-none rounded-pill" name="course" id="course">
+                <option value="HND">HND</option>
+                <option value="Foundation">Foundation</option>
+                <option value="Dgree">Dgree</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+          <input type="text" class="form-control p-3 shadow-none rounded-pill" id="guardian" placeholder="Guardian" />
+        </div>
+
+        <div class="mb-3">
+          <select class="form-control p-3 shadow-none rounded-pill" name="Course" id="subject">
+                <option value="SE">SE</option>
+                <option value="ORDBMS">ORDBMS</option>
+                <option value="IP">IP</option>
+                <option value="OOP">OOP</option>
+                <option value="HCI">HCI</option>
+            </select>
+        </div>
+  
+          <div class="mb-3">
+            <button id="submitBtn" 
+              class="btn btn-primary p-3 btn-custom shadow-none rounded-pill w-100"
+            >
+              Insert
+            </button>
+            
+          </div>
+        </div>
+      </div>
+    </div> 
+      
+  </body>
+</html>

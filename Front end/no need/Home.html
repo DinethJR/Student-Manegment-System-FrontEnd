@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Home</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+ </script>
+ <link rel="stylesheet" href="style.css">
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark">
+    <a class="navbar-brand" href="Home.html">Student Manegment System</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link active" class="nav-link" href="Insert.html">Insert</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="">Find</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="">Update</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="">Delete</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="">All Students</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="text-center">
+          <h1 class="main-text typed-out">Student Manegment System</h1>
+          <p>Welcome to our student management web page! Designed to streamline administrative tasks, our platform offers a robust set of features to efficiently manage student records, activities, and academic progress. With our intuitive interface, you can effortlessly track attendance, manage grades, generate reports, and communicate with students and parents.</p>
+
+          <br>
+          <br>
+          <div class="mb-3">
+            <a href="login.html">
+            <button 
+              class=" btn-custom rounded-pill w-30 "
+            >
+              Sign in
+            </button>
+          </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+ 
+
+  <div class="logo">
+    Group Number 1B
+  </div>
+
+  <script>
+    jQuery(document).ready(function () {
+      $('h1').mousemove(function (e) {
+        var rXP = (e.pageX - this.offsetLeft - $(this).width() / 1);
+        var rYP = (e.pageY - this.offsetTop - $(this).height() / 1);
+        $('h1').css('text-shadow', +rYP / 10+ 'px ' + rXP / 50 + 'px rgba(138, 125, 125)');
+      });
+    });
+
+  </script>
+
+
+</body>
+
+</html>
